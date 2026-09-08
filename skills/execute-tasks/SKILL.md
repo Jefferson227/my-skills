@@ -18,7 +18,7 @@ You are responsible for executing one or more tasks based on instructions create
    - `.plans/<TICKET>/plan` — base information, typically `<TICKET>-implementation-plan.md` and `<TICKET>-requirements.md`.
    - `.plans/<TICKET>/tasks` — the task (or tasks) requested by the user.
    - `.plans/<TICKET>/docs` — documentation generated as the outcome of previously finished tasks, for broader context (may not exist).
-   - `wiki/index.md` and `wiki/CLAUDE.md`, **only if a `wiki/` folder exists** at the repository root — the project's knowledge base and the schema it is maintained under. Most projects have neither; skip silently when absent.
+   - `wiki/index.md` and the wiki's schema file, **only if a `wiki/` folder exists** at the repository root — the project's knowledge base and the conventions it is maintained under. The schema is the agent-instruction file inside `wiki/`: look for `wiki/AGENTS.md` first, then any other agent-instruction file the project uses (`wiki/CLAUDE.md`, `wiki/GEMINI.md`, `wiki/.cursorrules`, and similar). Some are one-line pointers to the canonical one — follow the pointer. Most projects have no wiki at all; skip silently when absent.
 
 4. **Identify which task(s) to execute.** Use what the user asked for (a specific number, a range, or "the next pending one"). If ambiguous, ask.
 
@@ -41,7 +41,7 @@ You are responsible for executing one or more tasks based on instructions create
 
    When `wiki/` does exist:
 
-   - **Follow the project's own schema.** If `wiki/CLAUDE.md` exists, it defines that wiki's page types, frontmatter, linking and logging conventions — obey it over anything below. The rest of this step is the default for a wiki with no schema file.
+   - **Follow the project's own schema.** If the wiki has a schema file (located as described in step 3), it defines that wiki's page types, frontmatter, linking and logging conventions — obey it over anything below. The rest of this step is the default for a wiki with no schema file.
    - **Apply the filter. Most tasks write nothing, and that is the expected outcome.** Write only when the task produced one of:
      - external evidence — data or rules obtained from outside the repository
      - a decision whose rationale the code cannot state, including the alternatives rejected
