@@ -1,0 +1,16 @@
+{
+  "name": "jefferson227",
+  "owner": {
+    "name": "Jefferson Matheus"
+  },
+  "metadata": {
+    "description": "Jefferson Matheus's Claude Code skills."
+  },
+  "plugins": [
+    {
+      "name": "my-skills",
+      "source": "./",
+      "description": "Plan → tasks → execute workflow skills: create-plan, create-tasks, execute-tasks."
+    }
+  ]
+}

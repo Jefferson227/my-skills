@@ -1,0 +1,10 @@
+{
+  "name": "my-skills",
+  "version": "0.1.0",
+  "description": "Plan → tasks → execute workflow skills: create-plan, create-tasks, execute-tasks.",
+  "author": {
+    "name": "Jefferson Matheus"
+  },
+  "repository": "https://github.com/Jefferson227/my-skills",
+  "license": "MIT"
+}

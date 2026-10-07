@@ -12,6 +12,25 @@ The three are meant to be used in order, but each works on its own.
 
 ## Install
 
+### As a Claude Code plugin
+
+```
+/plugin marketplace add Jefferson227/my-skills
+/plugin install my-skills@jefferson227
+```
+
+Plugin skills are namespaced: `/my-skills:create-plan`, `/my-skills:create-tasks`, `/my-skills:execute-tasks`. Asking in plain language still triggers them.
+
+Update with `/plugin marketplace update jefferson227`, remove with `/plugin uninstall my-skills@jefferson227`.
+
+To try local changes without installing:
+
+```bash
+claude --plugin-dir .
+```
+
+### With the `skills` CLI
+
 ```bash
 npx skills add Jefferson227/my-skills
 ```
@@ -44,7 +63,7 @@ create the tasks for PROJ-123
 execute task 1 of PROJ-123
 ```
 
-## Update / remove
+## Update / remove (`skills` CLI)
 
 ```bash
 npx skills update create-plan create-tasks execute-tasks
